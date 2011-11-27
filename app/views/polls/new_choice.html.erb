@@ -1,0 +1,9 @@
+<div>
+    <h2><%= l(:choice_new) %></h2>
+    <% labelled_tabular_form_for :choice, @choice, :url => {:action => 'new_choice', :project_id => @project, :poll_id => @poll},
+                                 :html => { :id => 'choice-form' } do |f| %>
+        <%= render :partial => 'choice', :locals => { :f => f } %>
+        <%= submit_tag l(:button_create) %>
+    <% end %>
+    <%= link_to l(:button_cancel), { :action => 'index', :project_id => @project} %>
+</div>

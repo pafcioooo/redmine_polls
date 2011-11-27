@@ -1,0 +1,12 @@
+<% content_for :header_tags do %>
+    <%= stylesheet_link_tag 'polls', :plugin => 'redmine_polls' %>
+<% end %>
+<% if polls.any? %>
+<div class="polls box">
+            <h3><%= l(:polls) %></h3>
+            <% polls.each do |poll| %>
+                <% vote = VotingVote.find_by_user_id_and_poll_id(User.current.id, poll.id) %>
+                <%= render :partial => 'polls/poll', :locals => { :poll => poll, :vote =>vote} %>
+            <% end %>
+</div>
+<% end %>

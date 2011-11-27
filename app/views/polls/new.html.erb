@@ -1,0 +1,9 @@
+<div id="add-news">
+    <h2><%= l(:poll_new) %></h2>
+    <% labelled_tabular_form_for :poll, @poll, :url => {:action => 'new', :project_id => @project},
+                                 :html => { :id => 'polls-form' } do |f| %>
+        <%= render :partial => 'form', :locals => { :f => f } %>
+        <%= submit_tag l(:button_create) %>
+    <% end %>
+    <%= link_to l(:button_cancel),  { :action => 'index', :project_id => @project} %>
+</div>

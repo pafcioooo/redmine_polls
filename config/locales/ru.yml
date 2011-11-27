@@ -1,0 +1,16 @@
+
+ru:
+ polls: Голосование
+ poll_new: Создание голосования
+ choice_new: Создание варианта выбора
+ choice_add: Добавить вариант
+ field_question: Тема голосования
+ field_revote: Возможность переголосовать
+ field_text: Вариант выбора
+ poll_edit: Изменение голосования
+ choice_edit: Изменение варианта
+ revote: Переголосовать
+ vote_remove: Удалить голос
+ poll_edit: Изменить голосование
+ poll_remove: Удалить голосование
+ choice_remove: Удалить вариант 

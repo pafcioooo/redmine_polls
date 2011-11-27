@@ -1,0 +1,46 @@
+<h2><%= l(:polls) %></h2>
+
+
+<div class="contextual">
+    <%= link_to(l(:button_create),
+                {:controller => 'polls', :action => 'new', :project_id => @project},
+                :class => 'icon icon-add') %>
+</div>
+
+<% @polls.each do |poll| %>
+    <div>
+        <% choices = poll.choices %>
+        <table class="list" style="width:60%">
+            <tr>
+                <th class="poll_head"><%= poll.id.to_s + '. ' +poll.question %></th>
+                <th style="width:5%;"></th>
+                <th class="buttons" align="right">
+                    <%= link_to '', { :action => 'edit', :id => poll, :project_id => @project },
+                                :class => 'icon icon-edit',:title => l(:poll_edit) %>
+                    <%= link_to '', { :action => 'delete', :id => poll, :project_id => @project},
+                                :method => :post,
+                                :confirm => l(:text_are_you_sure),
+                                :class => 'icon icon-del',:title => l(:poll_remove) %>
+                </th>
+            </tr>
+            <% choices.each do |choice| %>
+                <tr class="<%= cycle('odd', 'even') %>">
+                    <td><%= link_to choice.text, :action => 'edit_choice', :id => choice, :poll_id => poll,:project_id=>@project %></td>
+                    <td align="center"><%=choice.votes.size.to_s%> </td>
+                    <td  class="buttons">
+                        <%= link_to '', { :action => 'remove_choice', :id => choice,:project_id => @project},
+                                    :method => :post,
+                                    :confirm => l(:text_are_you_sure),
+                                    :class => 'icon icon-del',:title => l(:choice_remove) %>
+                    </td>
+                </tr>
+            <% end %>
+            <tr>
+                <td colspan="3" align="left"><%= link_to l(:choice_add),
+                                                         { :action => 'new_choice', :poll_id => poll , :project_id => @project},
+                                                         :class => 'icon icon-add' %></td>
+            </tr>
+        </table>
+        <% reset_cycle %>
+    </div>
+<% end if @polls%>

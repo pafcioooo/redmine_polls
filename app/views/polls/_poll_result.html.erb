@@ -1,0 +1,25 @@
+<% content_for :header_tags do %>
+    <%= stylesheet_link_tag 'polls', :plugin => 'redmine_polls' %>
+<% end %>
+<% if User.current.allowed_to?(:vote_polls, Project.find_by_id(poll.project_id))%>
+<table class="list">
+    <tr>
+        <th colspan="2"> <%= poll.question %> </th>
+    </tr>
+    <% poll.choices.each do |choice| %>
+        <tr class="poll">
+            <td class="poll_choice"> <%= choice.text %> </td>
+
+            <td class="poll_users">
+                <ol>
+                    <% choice.votes.to_a.sort! {|x, y| x.user.lastname <=> y.user.lastname}.each do |vote| %>
+                        <li>
+                            <nobr><%= vote.user.lastname + " " + vote.user.firstname %> </nobr>
+                        </li>
+                    <% end %>
+                </ol>
+            </td>
+        </tr>
+    <% end %>
+</table>
+<% end %>

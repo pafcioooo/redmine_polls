@@ -1,0 +1,18 @@
+= redmine_polls
+
+Adds polls management to Redmine (Polls tab at the project level). 
+
+You can insert polls and poll results as Wiki macros. Two macros are available:
+*  {{poll(id)}} - show poll
+*  {{poll_result(id)}} - show detailed poll results
+
+Additional permissions: Edit polls, Vote polls.
+
+Polls not voted by the current user are shown on Home (all projects) and on project's Overview in a box similar to Latest News.
+
+Deleting a poll option already voted for by some users deletes their votes. 
+
+Credits:
+Author: Pavel Vinokurov (vinokurov@axmor.com)
+Inspired by Confluence Survey plugin (https://plugins.atlassian.com/plugin/details/195)
+Work sponsored by Axmor Software (http://www.axmor.com)

@@ -1,0 +1,5 @@
+div.polls h3 { background: url(../../../images/true.png) no-repeat 0% 50%; padding-left: 20px; }
+tr.poll_result td { text-align: center;}
+tr.poll td {vertical-align: middle;}
+td.poll_choice  { text-align: left;}
+td.poll_users   { text-align: left; width:30%} 

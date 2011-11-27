@@ -1,0 +1,6 @@
+<% content_for :header_tags do %>
+    <%= stylesheet_link_tag 'polls', :plugin => 'redmine_polls' %>
+<% end %>
+<div style="width:60%">
+   <%=render :partial => 'polls/poll_result', :locals => { :poll => poll}%>
+</div>
