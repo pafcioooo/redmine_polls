@@ -1,16 +1,16 @@
 # French strings go here for Rails i18n
 fr:
-  polls: Polls
-  poll_new: New poll
-  choice_new: New choice
-  choice_add: Add choice
+  polls: Sondages
+  poll_new: Nouveau sondage
+  choice_new: Nouveau choix
+  choice_add: Ajouter un choix
   field_question: Question
-  field_revote: Revote ability
-  field_text: Choice
-  poll_edit: Edit poll
-  choice_edit: Edit choice
-  revote: Revote
-  vote_remove: Remove vote
-  poll_edit: Edit poll
-  poll_remove: Remove poll
-  choice_remove: Remove choice
+  field_revote: Possibilité de revoter
+  field_text: Choix
+  poll_edit: Editer le sondage
+  choice_edit: Editer le choix
+  revote: Revoter
+  vote_remove: Supprimer le vote
+  poll_edit: Editer le sondage
+  poll_remove: Supprimer le sondage
+  choice_remove: Suprrimer le choix
