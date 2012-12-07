@@ -1,10 +1,11 @@
 <div id="edit-choice">
     <h2><%= l(:choice_edit) %></h2>
-    <% labelled_tabular_form_for :choice, @choice,
+    <% form = labelled_form_for :choice, @choice,
                                  :url => {:action => 'edit_choice', :id => @choice, :project_id => @project, :poll_id => @poll },
-                                 :html => { :id => 'choice-form' } do |f| %>
+                                 :html => { :id => 'choice-form', :class => 'tabular' } do |f| %>
         <%= render :partial => 'choice', :locals => { :f => f } %>
         <%= submit_tag l(:button_update) %>
     <% end %>
+    <%= form if Rails::VERSION::MAJOR >= 3 %>
     <%= link_to l(:button_cancel), { :action => 'index', :project_id => @project} %>
 </div>

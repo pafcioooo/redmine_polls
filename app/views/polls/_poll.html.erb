@@ -1,6 +1,5 @@
-
 <% if User.current.allowed_to?(:vote_polls, Project.find_by_id(poll.project_id))%>
-<% form_tag({:controller => 'polls', :action => 'vote',:project_id => poll.project_id,
+<% form = form_tag({:controller => 'polls', :action => 'vote',:project_id => poll.project_id,
                                      :back_url => url_for(params)}) do %>
 <table class="list">
     <tr>
@@ -27,7 +26,7 @@
             </td>
         </tr>
     <% end %>
-
 </table>
 <% end %>
+<%= form if Rails::VERSION::MAJOR >= 3 %>
 <% end %>
