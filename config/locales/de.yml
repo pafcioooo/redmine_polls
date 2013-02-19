@@ -1,0 +1,16 @@
+# German strings go here for Rails i18n
+de:
+  polls: Umfragen
+  poll_new: Neue Umfrage
+  choice_new: Neue Auswahl
+  choice_add: Auswahl hinzufügen
+  field_question: Frage
+  field_revote: Abstimmung erlauben
+  field_text: Abstimmung erlauben
+  poll_edit: Umfrage ändern
+  choice_edit: Auswahl ändern
+  revote: Abstimmung
+  vote_remove: Stimme löschen
+  poll_remove: Umfrage löschen
+  choice_remove: Auswahl löschen
+  
