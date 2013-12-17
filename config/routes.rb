@@ -8,5 +8,6 @@ if Rails::VERSION::MAJOR >= 3
     match 'projects/:project_id/polls/new_choice' => 'polls#new_choice'
     match 'projects/:project_id/polls/:poll_id/edit_choice/:id' => 'polls#edit_choice'
     match 'projects/:project_id/polls/remove_choice/:id' => 'polls#remove_choice'
+    match 'projects/:project_id/polls/:poll_id/reset_vote' => 'polls#reset_vote'
   end
 end
