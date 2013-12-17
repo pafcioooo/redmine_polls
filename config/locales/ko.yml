@@ -1,0 +1,16 @@
+# Translation by Ki Won Kim (http://xyz37.blog.me, xyz37@naver.com)
+ko:
+  polls: "설문 조사"
+  poll_new: "새로운 설문"
+  choice_new: "새 선택 항목"
+  choice_add: "선택 항목 추가"
+  field_question: "질문"
+  field_revote: "재투표 가능"
+  field_text: "선택 항목"
+  poll_edit: "설문 수정"
+  choice_edit: "선택 항목 수정"
+  revote: "재투표"
+  vote_remove: "투표 제거"
+  poll_edit: "설문 수정"
+  poll_remove: "설문 제거"
+  choice_remove: "선택 항목 제거"

@@ -9,7 +9,7 @@ class PollsController < ApplicationController
 
   def new
     @poll = VotingPoll.new(:project_id => @project.id)
-    if request.post?
+    if request.post? || request.put?
       @poll.attributes = params[:poll]
       if @poll.save
         redirect_to :action => 'index', :project_id => @project
@@ -25,14 +25,14 @@ class PollsController < ApplicationController
 
   def edit
     @poll = VotingPoll.find(params[:id])
-    if request.post? && @poll.update_attributes(params[:poll])
+    if (request.post?  || request.put?) && @poll.update_attributes(params[:poll])
       redirect_to :action => 'index', :project_id => @project
     end
   end
 
   def new_choice
     @poll = VotingPoll.find(params[:poll_id])
-    if request.post?
+    if request.post? || request.put?
       @choice = VotingChoice.new()
       @choice.attributes = params[:choice]
       if @choice.save
@@ -50,7 +50,7 @@ class PollsController < ApplicationController
   def edit_choice
     @choice = VotingChoice.find(params[:id])
     @poll = VotingPoll.find(params[:poll_id])
-    if request.post?
+    if request.post? || request.put?
       if @choice.update_attributes(params[:choice])
         redirect_to :action => 'index', :project_id => @project
       end
